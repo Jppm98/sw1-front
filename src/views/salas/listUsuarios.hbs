@@ -1,0 +1,29 @@
+<div class="bg-cover bg-center h-screen" style="background-image: url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80');">
+    <div class="container mx-auto px-4 py-12">
+        <div class="max-w-md mx-auto">
+            <div class="bg-white rounded-lg shadow-lg">
+                <div class="bg-green-700 text-white py-4 px-6 rounded-t-lg">
+                    <h4 class="text-xl font-bold">Compartir con Amigos</h4>
+                </div>
+                <div class="p-6">
+                    <form action="/salas/compartir/{{idSala}}" method="POST">
+                        <div class="mb-4">
+                            <select name="idUsuario" id="select-users" class="form-select block w-full border border-gray-300 rounded-md py-2 px-3 placeholder-gray-500 focus:outline-none focus:border-blue-400">
+                                <option value="nulo">Seleccione un Usuario</option>
+                                {{#each users}}
+                                <option value="{{id}}">{{username}}, {{correo}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline">Compartir</button>
+                        </div>
+                        <div class="text-center">
+                            <a class="btn btn-secondary btn-sm" href="/profile">Atrás</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

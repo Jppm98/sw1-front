@@ -1,0 +1,23 @@
+<div class="mt-10">
+    <h1 class="text-3xl font-semibold text-center mb-8">Acceso a Convertir:</h1>
+</div>
+<div class="max-w-md mx-auto">
+    <div class="bg-white rounded-lg shadow-lg">
+        <div class="card-body">
+            <form action="/salas/edit/{{sala.id}}" method="POST">
+                <div class="mb-4">
+                    <input type="text" name="title" class="form-input block w-full border border-gray-300 rounded-md py-2 px-3 placeholder-gray-500 focus:outline-none focus:border-blue-400" placeholder="Título" value="{{sala.title}}" autofocus>
+                </div>
+                <div class="mb-4">
+                    <input type="text" name="xml" class="form-input block w-full border border-gray-300 rounded-md py-2 px-3 placeholder-gray-500 focus:outline-none focus:border-blue-400" placeholder="URL" value="{{sala.xml}}">
+                </div>
+                <div class="mb-4">
+                    <textarea name="description" rows="10" class="form-textarea block w-full border border-gray-300 rounded-md py-2 px-3 placeholder-gray-500 focus:outline-none focus:border-blue-400" placeholder="Descripción">{{javaCode}}</textarea>
+                </div>
+                <div class="mb-4">
+                    <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container mx-auto p-4">
+    <h1 class="text-2xl font-semibold mb-4">Salas Que Has Creado:</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {{#each salas}}
+        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            <div class="px-6 py-4">
+                <a href="/salas/inSala/{{tokenS}}" target="_blank" class="font-bold text-xl mb-2 block">{{title}}</a>
+                <p class="text-gray-700 text-base">{{description}}</p>
+            </div>
+            <div class="px-6 pt-4 pb-2 flex justify-between items-center">
+                <p class="text-gray-600 text-sm">Tiempo: {{timeago created_at}}</p>
+                <div>
+                    <div class="flex">
+                        <a href="/salas/listUsuarios/{{id}}" class="mr-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-3 rounded-full">Compartir</a>
+                        <a href="/salas/edit/{{id}}" class="mr-2 bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-3 rounded-full">Editar</a>
+                    </div>
+                    <div class="flex mt-2">
+                        <a href="/salas/delete/{{id}}" class="mr-2 bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-3 rounded-full">Borrar</a>
+                        <a href="/salas/exportar/{{id}}" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-3 rounded-full">Exportar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            <div class="px-6 py-4">
+                <p class="text-gray-700 text-base">No hay ninguna sala que hayas creado.</p>
+                <a href="/salas/add" class="text-blue-500 font-bold hover:underline">¡Crea una!</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
